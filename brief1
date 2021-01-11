@@ -1,0 +1,252 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--  link bootstrapp -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- link awesone     -->
+    <script src="https://kit.fontawesome.com/7d907ae6fa.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <!-- <script> window.onload = function load(){}</script> --> 
+    <!-- // test  -->
+    <style>
+        #navGithub{
+
+            font-size: 18px;
+            color: white;
+            margin-left: 50px;
+        }
+        #body{
+            background-color: #f0f4f7;
+        }
+        #btn{
+            background-color: black;
+            border-radius: 0px 10px 10px 0px;
+            color: white;
+            border: 0px;
+            height: 50px ;
+            width: 50px;
+            
+            
+        }
+       
+        #username{
+            height: 50px;
+            background-color: #f0f4f7 ;
+            width: 350px;
+        }
+        #cards{
+            width: 800px;
+            margin: auto;
+            margin-top: 40px;
+        }
+        .card{
+            padding: 5px;
+            margin: 10px;
+            background-color: #f0f4f7 ;
+            
+        }
+        #footer{
+            margin: auto;
+            margin-top: 200px;
+        }
+        body.modal-open .supreme-container{
+          -webkit-filter: blur(3px);
+          -moz-filter: blur(3px);
+          -o-filter: blur(3px);
+          -ms-filter: blur(3px);
+          filter: blur(3px);
+         }
+         
+    </style>
+
+</head>
+<body id="body"  onload="load()">
+
+    <!-- Header Nav bar  -->
+    <div class="supreme-container">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a id="navGithub" class="nav-link" href="#" >Github .</a>
+          </li>
+        </ul>
+    </nav>
+
+    <!--  search input -->
+    <div style="width: 400px; margin: auto; padding-top: 60px;">
+        <div class="row">
+          <div style="margin-right: 0px ;padding: 0px;" class="col">
+            <input id="username" type="text" class="form-control" placeholder=" Username" >
+          </div>
+          <div  style="margin-right: 0px ;padding: 0px;;"  class="col">
+            <button id="btn" type="button"  onclick="search()" > <i class="fas fa-search"></i></button>
+
+          </div>
+        </div>
+    </div>
+
+    <div id="cards" class="card-deck" style="width: 70%;margin: auto;text-align: center;">
+        <h2 style="text-align: start; margin-top: 70px;"> Github Profiles </h2>
+        <div class="card-group">
+            <div class="card">
+              <img src="#" id="src0" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" id="user0">user0</h5>
+                
+                
+              </div>
+            </div>
+            <div class="card">
+              <img src="#" id="src1" class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title" id="user1">user1</h5>
+                
+               
+              </div>
+            </div>
+            <div class="card">
+              <img src="#" id="src2" class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title" id="user2">user2</h5>
+                
+              </div>
+            </div>
+            <div class="card">
+                <img src="#" id="src3" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h5 class="card-title" id="user3">user3</h5>
+                  
+                  
+                </div>
+    
+          </div>
+         
+    </div>
+    <footer id="footer">
+        <p class="copyright">copyright 2020/2021</p>
+    </footer>
+    
+    </div>
+    </div>
+    <!-- ---------------------------------------------------------------- -->
+
+
+   
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="background: none;border: none;">
+          <div class="modal-header" style=" border-radius: 20px 20px 0 0;">
+           
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+        <img class="card-img-top" src="404.png" id="imageProfil" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;" id="nameProfil">Profile not found ! </h5>
+          <div style="font-size: 20px">
+              <label style="margin-right: 204px">Followers : <span id="followers">00</span></label>
+           <label>Repos : <span id="repos">00</span></label>
+          </div>
+        </div>
+      </div>
+          </div>
+          <div class="modal-footer" style="border-radius: 0 0 20px 20px;background: black">
+            <button type="button" class="btn btn-secondary" style="width: 100%;background: none;border:none" ><a href="#"  id="link" style="color:white;">PROFILE</a> </button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+        //  function pour affiche des utilisateurs dans la page d'acceuil .
+        function load() {
+            alert("ok");
+        	   var arrayProfils=[];
+       		   var objectUser ;
+                  fetch('https://api.github.com/users')
+                 .then(response => response.json())
+                 .then(data => { 
+
+                for( i = 0 ; i < 4 ;i++){ 
+
+                      objectUser={ login:data[i].login,avatar:data[i].avatar_url } 
+
+                  arrayProfils.push(objectUser);
+                  var name = "user"+i;
+                  var image= "src"+i
+                  document.getElementById(name).innerHTML=arrayProfils[i].login ;  
+                  document.getElementById(image).src=arrayProfils[i].avatar ;  
+               
+                     }
+
+                 }); 
+        }
+
+
+        function search(){
+            alert("ok ");
+            var username= document.getElementById("username").value;
+
+            console.log("https://api.github.com/users/"+username);
+            alert("okiiiiiiiii");
+
+  
+
+            var request = new XMLHttpRequest;
+            var userData = "https://api.github.com/users/"+username;
+            alert(userData);
+
+            request.open("GET",userData,true);
+            var searchObject;
+             request.onload = function(){
+              alert("okoooooooo");
+             if (this.status == 200){
+
+                 jsonRequest = JSON.parse(this.responseText);
+                searchObject = {
+                                login:jsonRequest.login,
+                                avatar:jsonRequest.avatar_url,
+                                repos:jsonRequest.public_repos,
+                                followers:jsonRequest.followers
+                }
+                alert(searchObject.avatar);
+
+             document.getElementById("imageProfil").src= searchObject.avatar;	
+             document.getElementById("nameProfil").innerHTML= searchObject.login;	
+             document.getElementById("followers").innerHTML= searchObject.followers	;
+             document.getElementById("repos").innerHTML= searchObject.repos	;	
+             document.getElementById("link").target= "_blank";
+             document.getElementById("link").href= "https://github.com/"+searchObject.login	
+             ;  
+           } else{
+                document.getElementById("imageProfil").src= "404.png";	
+             document.getElementById("nameProfil").innerHTML= "Profile not found ! ";	
+             document.getElementById("followers").innerHTML= "00";
+             document.getElementById("repos").innerHTML= "00";
+              document.getElementById("link").href= "#";
+              document.getElementById("link").target= "";
+
+             }  
+            
+           }
+            request.send();
+        }
+
+    </script>
+      
+    
+</body>
+</html>
